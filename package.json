@@ -6,8 +6,6 @@
   },
   "version": "1.0.0",
   "description": "Blackbox Development's Landing Page",
-  "main": "index.js",
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
@@ -26,7 +24,7 @@
     "postcss-simple-vars": "^5.0.1"
   },
   "scripts": {
-    "dev": "gulp --gulpfile gulpfile.dev.js"
+    "dev": "gulp --gulpfile .gulpfile.dev.js"
   },
   "repository": {
     "type": "git",
