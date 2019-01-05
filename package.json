@@ -17,6 +17,7 @@
     "gulp-babel": "^8.0.0",
     "gulp-cli": "^2.0.1",
     "gulp-csso": "^3.0.1",
+    "gulp-inject": "^5.0.2",
     "gulp-livereload": "^4.0.1",
     "gulp-postcss": "^8.0.0",
     "gulp-svg-sprite": "^1.5.0",

@@ -4,6 +4,7 @@ const postcss = require('gulp-postcss');
 const postcssVars = require('postcss-simple-vars');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
+const inject = require('gulp-inject');
 
 const javascript = () =>
   src('.src/interactions.js')
@@ -23,7 +24,30 @@ const styles = () =>
   ]))
   .pipe(dest('.builds'));
 
+const copyHtml = () =>
+  src('.src/index.html')
+  .pipe(dest('.builds'));
+
+const injectHtml = () =>
+  src('.builds/index.html')
+  .pipe(
+    inject(
+      src(
+        ['.builds/*.js', '.builds/*.css'],
+        { read: false },
+      ),
+      {
+        relative: true,
+        removeTags: true,
+      },
+    ),
+  )
+  .pipe(dest('.builds'));
+
+const html = series(copyHtml, injectHtml);
+
 exports.javascript = javascript;
 exports.styles = styles;
+exports.html = html;
 
-exports.default = parallel(javascript, styles);
+exports.default = series(parallel(javascript, styles), html);
