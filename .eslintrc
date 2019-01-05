@@ -1,0 +1,27 @@
+{
+  "extends": ["airbnb", "prettier"],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "trailingComma": "all"
+      }
+    ],
+    "no-console": ["off"],
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "ignoreComments": true
+      }
+    ],
+    "indent": ["error", 2],
+    "quotes": [2, "single", "avoid-escape"]
+  }
+}

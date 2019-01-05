@@ -1,0 +1,64 @@
+{
+  "name": "b17t.github.io",
+  "private": true,
+  "engines": {
+    "node": ">=10.12.0"
+  },
+  "version": "1.0.0",
+  "description": "Blackbox Development's Landing Page",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "autoprefixer": "^9.4.4",
+    "cssnano": "^4.1.8",
+    "del": "^3.0.0",
+    "eslint": "5.3",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "2.14",
+    "eslint-plugin-jsx-a11y": "6.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "7.11",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-cli": "^2.0.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-git": "^2.8.0",
+    "gulp-hash-filename": "^2.0.1",
+    "gulp-inject": "^5.0.2",
+    "gulp-livereload": "^4.0.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-svg-sprite": "^1.5.0",
+    "gulp-uglify": "^3.0.1",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.0",
+    "postcss-simple-vars": "^5.0.1",
+    "prettier": "^1.15.3",
+    "stylelint": "^9.9.0",
+    "stylelint-config-standard": "^18.2.0"
+  },
+  "scripts": {
+    "dev": "gulp --gulpfile _dev.js",
+    "build": "gulp --gulpfile _prod.js",
+    "clean": "gulp --gulpfile _prod.js cleanup",
+    "lint": "eslint _src/**/*.js",
+    "lint:fix": "eslint --fix _src/**/*.js",
+    "stylelint": "stylelint _src/**/*.css",
+    "stylelint:fix": "stylelint --fix _src/**/*.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b17t/b17t.github.io.git"
+  },
+  "keywords": [
+    "blackbox",
+    "development",
+    "b17t"
+  ],
+  "author": "Raul Glogovetan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/b17t/b17t.github.io/issues"
+  },
+  "homepage": "https://github.com/b17t/b17t.github.io#readme"
+}

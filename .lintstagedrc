@@ -1,0 +1,12 @@
+{
+  "linters": {
+    "_src/*.js": [
+      "yarn lint:fix",
+      "git add"
+    ],
+    "_src/*.css": [
+      "yarn stylelint:fix",
+      "git add"
+    ]
+  }
+}

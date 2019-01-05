@@ -1,0 +1,5 @@
+$background: #161616;
+
+.main {
+  background-color: $background;
+}
