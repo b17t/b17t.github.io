@@ -2,13 +2,21 @@
   "name": "b17t.github.io",
   "private": true,
   "engines": {
-      "node": ">=10.12.0"
+    "node": ">=10.12.0"
   },
   "version": "1.0.0",
   "description": "Blackbox Development's Landing Page",
   "main": "index.js",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-cli": "^2.0.1",
+    "gulp-livereload": "^4.0.1",
+    "gulp-svg-sprite": "^1.5.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
