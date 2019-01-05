@@ -1,5 +1,5 @@
-const DEV_BUILDS = '.builds';
-const GLOBAL_SOURCE = '.src';
+const DEV_BUILDS = '_builds';
+const GLOBAL_SOURCE = '_src';
 
 const CSS_SOURCE = `${GLOBAL_SOURCE}/*.css`;
 const JS_SOURCE = `${GLOBAL_SOURCE}/*.js`;

@@ -17,7 +17,7 @@ const {
   CSS_BUILDS,
   JS_BUILDS,
   HTML_BUILDS,
-} = require('./.filepaths');
+} = require('./_filepaths');
 
 const javascript = () =>
   src(JS_SOURCE)

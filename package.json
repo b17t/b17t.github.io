@@ -24,7 +24,7 @@
     "postcss-simple-vars": "^5.0.1"
   },
   "scripts": {
-    "dev": "gulp --gulpfile .gulpfile.dev.js"
+    "dev": "gulp --gulpfile _gulpfile.dev.js"
   },
   "repository": {
     "type": "git",
