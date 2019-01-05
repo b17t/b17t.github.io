@@ -1,0 +1,30 @@
+{
+  "name": "b17t.github.io",
+  "private": true,
+  "engines": {
+      "node": ">=10.12.0"
+  },
+  "version": "1.0.0",
+  "description": "Blackbox Development's Landing Page",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b17t/b17t.github.io.git"
+  },
+  "keywords": [
+    "blackbox",
+    "development",
+    "b17t"
+  ],
+  "author": "Raul Glogovetan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/b17t/b17t.github.io/issues"
+  },
+  "homepage": "https://github.com/b17t/b17t.github.io#readme"
+}
