@@ -8,16 +8,27 @@ const inject = require('gulp-inject');
 const connect = require('gulp-connect');
 const del = require('del');
 
+const {
+  DEV_BUILDS,
+  GLOBAL_SOURCE,
+  CSS_SOURCE,
+  JS_SOURCE,
+  HTML_SOURCE,
+  CSS_BUILDS,
+  JS_BUILDS,
+  HTML_BUILDS,
+} = require('./filepaths');
+
 const javascript = () =>
-  src('.src/interactions.js')
+  src(JS_SOURCE)
   .pipe(babel({
     presets: ['@babel/env'],
   }))
-  .pipe(dest('.builds'))
+  .pipe(dest(DEV_BUILDS))
   .pipe(connect.reload());
 
 const styles = () =>
-  src('.src/styling.css')
+  src(CSS_SOURCE)
   .pipe(postcss([
     postcssVars(),
     autoprefixer({
@@ -25,19 +36,19 @@ const styles = () =>
     }),
     cssnano(),
   ]))
-  .pipe(dest('.builds'))
+  .pipe(dest(DEV_BUILDS))
   .pipe(connect.reload());
 
 const copyHtml = () =>
-  src('.src/index.html')
-  .pipe(dest('.builds'));
+  src(HTML_SOURCE)
+  .pipe(dest(DEV_BUILDS));
 
 const injectHtml = () =>
-  src('.builds/index.html')
+  src(HTML_BUILDS)
   .pipe(
     inject(
       src(
-        ['.builds/*.js', '.builds/*.css'],
+        [ JS_BUILDS, CSS_BUILDS ],
         { read: false },
       ),
       {
@@ -46,23 +57,23 @@ const injectHtml = () =>
       },
     ),
   )
-  .pipe(dest('.builds'))
+  .pipe(dest(DEV_BUILDS))
   .pipe(connect.reload());
 
 const html = series(copyHtml, injectHtml);
 
 const server = () => connect.server({
-  root: '.builds',
+  root: DEV_BUILDS,
   livereload: true,
 });
 
 const watcher = () => {
-  watch(['.src/*.css'], styles);
-  watch(['.src/*.js'], javascript);
-  watch(['.src/*.html'], html);
+  watch([CSS_SOURCE], styles);
+  watch([JS_SOURCE], javascript);
+  watch([HTML_SOURCE], html);
 };
 
-const cleanup = () => del('.builds');
+const cleanup = () => del(DEV_BUILDS);
 
 exports.javascript = javascript;
 exports.styles = styles;
