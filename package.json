@@ -38,9 +38,9 @@
     "stylelint-config-standard": "^18.2.0"
   },
   "scripts": {
-    "dev": "gulp --gulpfile _gulpfile.dev.js",
-    "build": "gulp --gulpfile _gulpfile.prod.js",
-    "clean": "gulp --gulpfile _gulpfile.prod.js cleanup",
+    "dev": "gulp --gulpfile _dev.js",
+    "build": "gulp --gulpfile _prod.js",
+    "clean": "gulp --gulpfile _prod.js cleanup",
     "lint": "eslint _src/**/*.js",
     "lint:fix": "eslint --fix _src/**/*.js",
     "stylelint": "stylelint _src/**/*.css",
