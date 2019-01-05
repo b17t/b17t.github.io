@@ -12,6 +12,11 @@
     "autoprefixer": "^9.4.4",
     "cssnano": "^4.1.8",
     "del": "^3.0.0",
+    "eslint": "5.3",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "2.14",
+    "eslint-plugin-jsx-a11y": "6.1",
+    "eslint-plugin-react": "7.11",
     "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-cli": "^2.0.1",
@@ -28,7 +33,9 @@
   "scripts": {
     "dev": "gulp --gulpfile _gulpfile.dev.js",
     "build": "gulp --gulpfile _gulpfile.prod.js",
-    "clean": "gulp --gulpfile _gulpfile.prod.js cleanup"
+    "clean": "gulp --gulpfile _gulpfile.prod.js cleanup",
+    "lint": "eslint _src/**/*.js",
+    "lint:fix": "eslint --fix _src/**/*.js"
   },
   "repository": {
     "type": "git",
