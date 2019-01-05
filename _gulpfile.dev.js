@@ -3,7 +3,6 @@ const babel = require('gulp-babel');
 const postcss = require('gulp-postcss');
 const postcssVars = require('postcss-simple-vars');
 const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
 const inject = require('gulp-inject');
 const connect = require('gulp-connect');
 const del = require('del');
@@ -34,7 +33,6 @@ const styles = () =>
     autoprefixer({
       browsers: ['last 5 version'],
     }),
-    cssnano(),
   ]))
   .pipe(dest(DEV_BUILDS))
   .pipe(connect.reload());
