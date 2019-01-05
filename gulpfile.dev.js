@@ -6,6 +6,7 @@ const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const inject = require('gulp-inject');
 const connect = require('gulp-connect');
+const del = require('del');
 
 const javascript = () =>
   src('.src/interactions.js')
@@ -61,11 +62,19 @@ const watcher = () => {
   watch(['.src/*.html'], html);
 };
 
+const cleanup = () => del('.builds');
+
 exports.javascript = javascript;
 exports.styles = styles;
 exports.html = html;
 exports.server = server;
 exports.watcher = watcher;
+exports.cleanup = cleanup;
 
 exports.default = finishCb =>
-  series(parallel(javascript, styles), html, parallel(server, watcher))(finishCb);
+  series(
+    cleanup,
+    parallel(javascript, styles),
+    html,
+    parallel(server, watcher)
+  )(finishCb);
