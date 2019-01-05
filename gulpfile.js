@@ -1,13 +1,29 @@
 const { src, dest, series, parallel } = require('gulp');
 const babel = require('gulp-babel');
+const postcss = require('gulp-postcss');
+const postcssVars = require('postcss-simple-vars');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
 
-function transpile() {
-  return src('.src/interactions.js', { sourcemaps: true })
-    .pipe(babel({
-        presets: ['@babel/env']
-    }))
-    .pipe(dest('.builds', { sourcemaps: true }))
-}
+const javascript = () =>
+  src('.src/interactions.js')
+  .pipe(babel({
+    presets: ['@babel/env'],
+  }))
+  .pipe(dest('.builds'));
 
-exports.transpile = transpile;
-exports.default = parallel(transpile);
+const styles = () =>
+  src('.src/styling.css')
+  .pipe(postcss([
+    postcssVars(),
+    autoprefixer({
+      browsers: ['last 5 version'],
+    }),
+    cssnano(),
+  ]))
+  .pipe(dest('.builds'));
+
+exports.javascript = javascript;
+exports.styles = styles;
+
+exports.default = parallel(javascript, styles);
