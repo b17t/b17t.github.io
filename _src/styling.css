@@ -93,14 +93,42 @@ section p {
   font-weight: 400;
 }
 
-/*
- * @TODO Temporary until Mailchimp is wired in
- */
-.fakeInput {
-  color: $gray;
+.newsletter #mc_embed_signup_scroll {
+  margin-top: 100px;
+}
+
+.newsletter .mailchimpInput {
+  width: 100%;
+  color: $lightAccent;
+  background-color: transparent;
+  border: none;
   padding: 20px 0;
   border-bottom: 1px solid $gray;
-  margin-top: 100px;
+  font-weight: bold;
+  outline: none;
+}
+
+.newsletter .mailchimpInput:focus {
+  border-color: $lightAccent;
+}
+
+.newsletter .mailchimpSubmitWrapper {
+  display: none;
+  margin-top: 20px;
+}
+
+.newsletter .mailchimpSubmit {
+  padding: 10px 20px;
+  border: none;
+  background-color: $lightAccent;
+  color: $darkGray;
+  font-family: $roboto;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.newsletter .mailchimpSubmit:hover {
+  background-color: $light;
 }
 
 footer {
