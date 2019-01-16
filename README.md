@@ -6,7 +6,9 @@ This is a simple repo that contains the files needed to host and deploy Blackbox
 
 ### Development
 
-The `gulp` task runner can output two types of builds: `development` _(served via a local dev server with livereload)_ and static `production` files.
+The `gulp` task runner can output two types of builds: `development` _(served via a local dev server with livereload)_ and static `production` files:
+- `yarn dev` for the development build
+- `yarn build` to build files for production
 
 Due to the nature of Github Pages's hosting, build files have to be commited to the repository.
 

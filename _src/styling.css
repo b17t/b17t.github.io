@@ -1,5 +1,165 @@
-$background: #161616;
+/*
+ * Colors
+ */
+$dark: #161616;
+$light: #e3e2db;
+$lightAccent: #fff;
+$gray: #808080;
+$darkGray: #333;
 
-.main {
-  background-color: $background;
+/*
+ * Fonts
+ */
+$lato: 'Lato', sans-serif;
+$roboto: 'Roboto Condensed', sans-serif;
+
+/*
+ * Text
+ */
+$textBase: 14px;
+$textLarge: 30px;
+$textTiny: 12px;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: $dark;
+  color: $light;
+  font-family: $lato;
+  font-size: $textBase;
+}
+
+a {
+  color: $lightAccent;
+  border-bottom: 1px solid $lightAccent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $gray;
+  border-color: $gray;
+}
+
+.content {
+  margin: 0 20px;
+}
+
+header {
+  text-align: left;
+  padding: 60px 0;
+}
+
+.lbox {
+  border: none;
+}
+
+.lbox svg {
+  fill: $lightAccent;
+  height: 32px;
+  width: 32px;
+}
+
+.lbox svg:hover {
+  fill: $gray;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+section p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.companyName {
+  font-family: $roboto;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.newsletter {
+  border: 1px solid $lightAccent;
+  padding: 30px;
+}
+
+.newsletter h3 {
+  margin: 0  0 10px 0;
+  padding: 0;
+  font-size: $textLarge;
+  color: $lightAccent;
+  font-weight: 400;
+}
+
+.newsletter #mc_embed_signup_scroll {
+  margin-top: 100px;
+}
+
+.newsletter .mailchimpInput {
+  width: 100%;
+  color: $lightAccent;
+  background-color: transparent;
+  border: none;
+  padding: 20px 0;
+  border-bottom: 1px solid $gray;
+  font-weight: bold;
+  outline: none;
+}
+
+.newsletter .mailchimpInput:focus {
+  border-color: $lightAccent;
+}
+
+.newsletter .mailchimpSubmitWrapper {
+  display: none;
+  margin-top: 20px;
+}
+
+.newsletter .mailchimpSubmit {
+  padding: 10px 20px;
+  border: none;
+  background-color: $lightAccent;
+  color: $darkGray;
+  font-family: $roboto;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.newsletter .mailchimpSubmit:hover {
+  background-color: $light;
+}
+
+footer {
+  font-size: $textTiny;
+  padding: 60px 0;
+  border-top: 1px solid $darkGray;
+}
+
+@media (min-width: 402px) {
+  .newsletter {
+    max-width: 280px;
+    padding: 60px;
+  }
+}
+
+@media (min-width: 802px) {
+  .content {
+    width: 800px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  header {
+    padding: 100px 0;
+  }
+
+  section {
+    margin-bottom: 80px;
+  }
+
+  footer {
+    padding: 80px 0;
+  }
 }
